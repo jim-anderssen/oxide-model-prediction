@@ -6,16 +6,16 @@ import joblib
 
 app = FastAPI(title=".csv -> Model -> .csv", version = '1.0')
 
-model_dict = {'CaO':joblib.load('../models_scalers/ca_model.joblib'),
-              'SiO2':joblib.load('../models_scalers/si_model.joblib'),
-              'Al2O3':joblib.load('../models_scalers/al_model.joblib'),
-              'Fe2O3':joblib.load('../models_scalers/fe_model.joblib')
+model_dict = {'CaO':joblib.load('models_scalers/ca_model.joblib'),
+              'SiO2':joblib.load('models_scalers/si_model.joblib'),
+              'Al2O3':joblib.load('models_scalers/al_model.joblib'),
+              'Fe2O3':joblib.load('models_scalers/fe_model.joblib')
              }
 
-scaler_dict = {'CaO':joblib.load('../models_scalers/ca_scaler.joblib'),
-               'SiO2':joblib.load('../models_scalers/si_scaler.joblib'),
-               'Al2O3':joblib.load('../models_scalers/al_scaler.joblib'),
-               'Fe2O3':joblib.load('../models_scalers/fe_scaler.joblib')
+scaler_dict = {'CaO':joblib.load('models_scalers/ca_scaler.joblib'),
+               'SiO2':joblib.load('models_scalers/si_scaler.joblib'),
+               'Al2O3':joblib.load('models_scalers/al_scaler.joblib'),
+               'Fe2O3':joblib.load('models_scalers/fe_scaler.joblib')
               }
 
 requirements = {
