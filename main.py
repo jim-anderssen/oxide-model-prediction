@@ -58,14 +58,14 @@ async def predict_csv(
     # 3 Validate shape and columns
     if df.shape[1] != 4:
         raise HTTPException(
-                status_code=422, detail=f"Expected 3 columns, got {df.shape[1]} columns: {list(df.columns)}"
+                status_code=422, detail=f"Expected 4 columns, got {df.shape[1]} columns: {list(df.columns)}"
                 )
        
     # 4 Predict
     try:
         out_df = pd.DataFrame()
         for key,model in model_dict.items():
-            # .ravel() removes a dimension in the retuned np.array([[]]), to just be np.array([])
+            # .ravel() removes a dimension in the returned np.array([[]]), to just be np.array([])
             out_df[key] = predict_with_each_model(model, scaler_dict[key],[requirements[key]], df).ravel().round(3)
 
     except Exception as e:
@@ -78,7 +78,7 @@ async def predict_csv(
     
  
     return StreamingResponse(
-        buffer, # Streamingresponse gets the tet stream in memory
+        buffer, # Streamingresponse gets the text stream in memory
         #iter([buffer.getvalue()]),
         media_type="text/csv", # States this is a csv file
         headers={"Content-Disposition": "attachment; filename=predictions.csv"} # Forces client to download file with filename
