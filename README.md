@@ -1,27 +1,14 @@
-# Deploy FastAPI on Render
+[![CC BY 4.0](https://img.shields.io/badge/License-CC--BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-Use this repo as a template to deploy a Python [FastAPI](https://fastapi.tiangolo.com) service on Render.
+This repository contains the research material and codebase for my bachelor's thesis:
+- **Optimising Metal and Mineral Recovery from Waste Streams** (Mid Sweden University, 2025)
 
-See https://render.com/docs/deploy-fastapi or follow the steps below:
+Please see my thesis report for the full context. 
 
-## Manual Steps
+- The data exploration file shows my method of working, both in the exploratory stage and the programmatic methodology.
+- The models_scalers directory includes all the individual models, and scalers for each predictors and response combination.
+- main.py is the API for the full model, built with FastAPI, which takes a .csv file with predictors as an input and returns a full predicted dataset.
 
-1. You may use this repository directly or [create your own repository from this template](https://github.com/render-examples/fastapi/generate) if you'd like to customize the code.
-2. Create a new Web Service on Render.
-3. Specify the URL to your new repository or this repository.
-4. Render will automatically detect that you are deploying a Python service and use `pip` to download the dependencies.
-5. Specify the following as the Start Command.
+- This API is deployed on Render, though not currently active.
 
-    ```shell
-    uvicorn main:app --host 0.0.0.0 --port $PORT
-    ```
-
-6. Click Create Web Service.
-
-Or simply click:
-
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/fastapi)
-
-## Thanks
-
-Thanks to [Harish](https://harishgarg.com) for the [inspiration to create a FastAPI quickstart for Render](https://twitter.com/harishkgarg/status/1435084018677010434) and for some sample code!
+I'm happy to discuss any questions regarding the project.
